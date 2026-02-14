@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
-    "homepage": "https://github.com/nikhilgoduguchintha.github.io/my-valentine"
+    "homepage": "https://nikhilgoduguchintha.github.io/my-valentine"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.18",
