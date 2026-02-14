@@ -53,6 +53,7 @@ export default function ValentinesExperience() {
   const [activeEnvelopeId, setActiveEnvelopeId] = useState(null);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [showFinal, setShowFinal] = useState(false);
+  const [swapButtons, setSwapButtons] = useState(false);
 
   const reasons = phase === "romantic" ? ROMANTIC_REASONS : CHEEKY_REASONS;
 
@@ -483,7 +484,11 @@ export default function ValentinesExperience() {
                 See 9 reasons why YOU should love ME! 😄
               </p>
 
-              <div className="flex gap-4 justify-center">
+              <div
+                className={`flex gap-4 justify-center ${
+                  swapButtons ? "flex-row-reverse" : "flex-row"
+                }`}
+              >
                 <button
                   onClick={startCheeky}
                   className="px-8 py-4 rounded-full font-bold text-lg shadow-lg transition-all duration-300 hover:scale-105"
@@ -497,6 +502,7 @@ export default function ValentinesExperience() {
                 </button>
 
                 <button
+                  onMouseEnter={() => setSwapButtons((s) => !s)}
                   onClick={() => setShowPrompt(false)}
                   className="px-8 py-4 rounded-full font-bold text-lg shadow-lg transition-all duration-300 hover:scale-105"
                   style={{
